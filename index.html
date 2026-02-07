@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iOS 26 — Liquid Glass</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wallpaper">
+      <div class="aurora"></div>
+      <div class="aurora aurora--two"></div>
+    </div>
+
+    <main class="phone" aria-label="Концепт интерфейса iOS 26">
+      <header class="statusbar">
+        <div class="statusbar__time" id="time">09:41</div>
+        <div class="statusbar__icons">
+          <span class="pill">5G</span>
+          <span class="signal"></span>
+          <span class="battery">
+            <span class="battery__level"></span>
+          </span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero__card">
+          <p class="hero__eyebrow">Liquid Glass</p>
+          <h1>iOS 26</h1>
+          <p class="hero__copy">
+            Насыщенное стекло, мягкие переливы и сверхчеткая типографика —
+            новый визуальный язык для вашего экрана.
+          </p>
+          <button class="hero__button">Открыть Центр управления</button>
+        </div>
+      </section>
+
+      <section class="widgets">
+        <article class="widget widget--large">
+          <div class="widget__header">
+            <span>Погода</span>
+            <span class="widget__meta">Сейчас</span>
+          </div>
+          <div class="widget__content">
+            <div class="temp">21°</div>
+            <div class="conditions">
+              <span>Мягкий туман</span>
+              <small>Ощущается как 23°</small>
+            </div>
+          </div>
+        </article>
+        <article class="widget widget--small">
+          <div class="widget__header">
+            <span>Музыка</span>
+          </div>
+          <div class="widget__content">
+            <div class="album"></div>
+            <div class="track">
+              <strong>Glasswave</strong>
+              <small>Nova Vibes</small>
+            </div>
+          </div>
+        </article>
+        <article class="widget widget--small">
+          <div class="widget__header">
+            <span>Фокус</span>
+          </div>
+          <div class="widget__content">
+            <div class="focus-ring"></div>
+            <div class="track">
+              <strong>Zen</strong>
+              <small>до 18:30</small>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="dock" aria-label="Док приложений">
+        <button class="dock__icon">
+          <span class="glyph">✦</span>
+        </button>
+        <button class="dock__icon">
+          <span class="glyph">☁︎</span>
+        </button>
+        <button class="dock__icon dock__icon--primary">
+          <span class="glyph">◎</span>
+        </button>
+        <button class="dock__icon">
+          <span class="glyph">✈︎</span>
+        </button>
+        <button class="dock__icon">
+          <span class="glyph">⚡︎</span>
+        </button>
+      </section>
+    </main>
+
+    <script>
+      const timeEl = document.getElementById('time');
+      const updateTime = () => {
+        const now = new Date();
+        timeEl.textContent = now.toLocaleTimeString('ru-RU', {
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+      };
+      updateTime();
+      setInterval(updateTime, 30000);
+    </script>
+  </body>
+</html>
